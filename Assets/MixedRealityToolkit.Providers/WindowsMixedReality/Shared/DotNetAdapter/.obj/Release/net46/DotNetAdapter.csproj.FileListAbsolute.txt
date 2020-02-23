@@ -1,0 +1,10 @@
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef.meta
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs.meta
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll.meta
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\Microsoft.Windows.MixedReality.DotNetWinRT.dll
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\net46\System.Drawing.Primitives.dll
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csprojAssemblyReference.cache
+F:\HoloRecorder\Assets\MixedRealityToolkit.Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\net46\DotNetAdapter.csproj.CopyComplete
