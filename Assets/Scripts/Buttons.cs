@@ -36,9 +36,9 @@ public class Buttons : MonoBehaviour
         recorder.SaveDataFile();
     }
 
-    public void DeleteData()
+    public void ResetData()
     {
-        Debug.Log("Deleting...");
+        Debug.Log("Resetting...");
         recorder.CreateTempFile();
     }
 }

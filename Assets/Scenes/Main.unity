@@ -855,7 +855,7 @@ PrefabInstance:
     - target: {fileID: 4511908082731844828, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeleteData
+      value: ResetData
       objectReference: {fileID: 0}
     - target: {fileID: 4511908082731844828, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
@@ -905,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 6475768286380468863, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: m_Name
-      value: DeleteButton
+      value: ResetButton
       objectReference: {fileID: 0}
     - target: {fileID: 6475768286833687439, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
@@ -1210,7 +1210,6 @@ MonoBehaviour:
   id: 
   recording: 0
   NTPOffset: 0
-  samplingRate: 60
 --- !u!4 &1693270003
 Transform:
   m_ObjectHideFlags: 0
