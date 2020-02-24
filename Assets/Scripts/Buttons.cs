@@ -2,13 +2,11 @@
 
 public class Buttons : MonoBehaviour
 {
-    private StateContainer stateContainer;
     private Recorder recorder;
 
     // Start is called before the first frame update
     void Start()
     {
-        stateContainer = GameObject.Find("StateContainer").GetComponent<StateContainer>();
         recorder = GameObject.Find("Main Camera").GetComponent<Recorder>();
     }
 
@@ -21,13 +19,13 @@ public class Buttons : MonoBehaviour
     public void StartRecord()
     {
         Debug.Log("Start recording...");
-        stateContainer.recording = true;
+        recorder.recording = true;
     }
 
     public void StopRecord()
     {
         Debug.Log("Stop recording...");
-        stateContainer.recording = false;
+        recorder.recording = false;
     }
 
     public void SaveData()

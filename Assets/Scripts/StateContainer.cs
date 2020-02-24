@@ -7,7 +7,6 @@ using UnityEngine;
 public class StateContainer : MonoBehaviour
 {
     public string id;
-    public bool recording = false;
     public long NTPOffset = 0;
 
     // Start is called before the first frame update

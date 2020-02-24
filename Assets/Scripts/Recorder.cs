@@ -10,6 +10,7 @@ public class Recorder : MonoBehaviour
     private StateContainer stateContainer;
     private long NTPOffset;
     private Vector3 position;
+    public bool recording = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class Recorder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stateContainer.recording)
+        if (recording)
         {
             position = transform.position;
 
@@ -53,10 +54,6 @@ public class Recorder : MonoBehaviour
 
     public void CreateTempFile()
     {
-        // https://nielson.dev/2015/09/saving-games-in-unity
-
-        Debug.Log("Creating temp file at " + GetTempPath());
-
         stateContainer.ResetID();
 
         try
