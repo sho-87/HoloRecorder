@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
 public class Buttons : MonoBehaviour
 {
@@ -33,10 +32,12 @@ public class Buttons : MonoBehaviour
     public void SaveData()
     {
         Debug.Log("Saving...");
+        GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>().text = "";
     }
 
     public void DeleteData()
     {
         Debug.Log("Deleting...");
+        GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>().text = "";
     }
 }

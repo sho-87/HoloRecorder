@@ -6,8 +6,8 @@ using UnityEngine;
 public class Recorder : MonoBehaviour
 {
     private StateContainer stateContainer;
-    private Vector3 position;
     private long NTPOffset;
+    private Vector3 position;
 
     // Start is called before the first frame update
     void Start()
