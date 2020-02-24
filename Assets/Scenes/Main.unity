@@ -1209,6 +1209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   recording: 0
+  NTPOffset: 0
+  samplingRate: 60
 --- !u!4 &1693270003
 Transform:
   m_ObjectHideFlags: 0

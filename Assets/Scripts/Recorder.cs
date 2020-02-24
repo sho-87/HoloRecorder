@@ -5,31 +5,31 @@ using UnityEngine;
 
 public class Recorder : MonoBehaviour
 {
-    private GameObject stateContainer;
+    private StateContainer stateContainer;
     private Vector3 position;
-    private DateTimeOffset timeUTC;
-    private long systemTime;
+    private long NTPOffset;
 
     // Start is called before the first frame update
     void Start()
     {
-        stateContainer = GameObject.Find("StateContainer");
-
-        // Get system time in milliseconds
-        timeUTC = DateTimeOffset.UtcNow;
-        systemTime = timeUTC.ToUnixTimeMilliseconds();
-
-        Debug.Log("System time: " + systemTime);
+        stateContainer = GameObject.Find("StateContainer").GetComponent<StateContainer>();
+        NTPOffset = stateContainer.NTPOffset;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (stateContainer.GetComponent<StateContainer>().recording)
+        if (stateContainer.recording)
         {
             position = transform.position;
-            Debug.Log(position);
+
+            Debug.Log(GetTrueTime().ToString() + ": " + position);
         }
+    }
+
+    long GetTrueTime()
+    {
+        return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() - NTPOffset;
     }
 
 }
