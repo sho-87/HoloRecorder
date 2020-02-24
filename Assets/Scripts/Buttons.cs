@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
-using TMPro;
 
 public class Buttons : MonoBehaviour
 {
-    private GameObject stateContainer;
+    private StateContainer stateContainer;
     private Recorder recorder;
 
     // Start is called before the first frame update
     void Start()
     {
-        stateContainer = GameObject.Find("StateContainer");
+        stateContainer = GameObject.Find("StateContainer").GetComponent<StateContainer>();
         recorder = GameObject.Find("Main Camera").GetComponent<Recorder>();
     }
 
@@ -22,26 +21,24 @@ public class Buttons : MonoBehaviour
     public void StartRecord()
     {
         Debug.Log("Start recording...");
-        stateContainer.GetComponent<StateContainer>().recording = true;
+        stateContainer.recording = true;
     }
 
     public void StopRecord()
     {
         Debug.Log("Stop recording...");
-        stateContainer.GetComponent<StateContainer>().recording = false;
+        stateContainer.recording = false;
     }
 
     public void SaveData()
     {
         Debug.Log("Saving...");
-        GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>().text = "";
         recorder.SaveDataFile();
     }
 
     public void DeleteData()
     {
         Debug.Log("Deleting...");
-        GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>().text = "";
         recorder.CreateTempFile();
     }
 }

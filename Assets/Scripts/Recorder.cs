@@ -30,6 +30,11 @@ public class Recorder : MonoBehaviour
         }
     }
 
+    private void OnApplicationQuit()
+    {
+        File.Delete(GetTempPath());
+    }
+
     long GetTrueTime()
     {
         return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() - NTPOffset;
@@ -52,6 +57,8 @@ public class Recorder : MonoBehaviour
 
         Debug.Log("Creating temp file at " + GetTempPath());
 
+        stateContainer.ResetID();
+
         try
         {
             Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "data"));
@@ -70,6 +77,7 @@ public class Recorder : MonoBehaviour
 
     public void SaveDataFile()
     {
+        Debug.Log("Data file saved to " + GetDataPath());
         File.Copy(GetTempPath(), GetDataPath());
         CreateTempFile();
     }

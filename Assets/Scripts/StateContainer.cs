@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,5 +29,11 @@ public class StateContainer : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ResetID()
+    {
+        GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>().text = "";
+        id = "";
     }
 }
