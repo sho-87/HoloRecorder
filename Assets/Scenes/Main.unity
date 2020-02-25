@@ -226,7 +226,7 @@ Camera:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -446,14 +446,14 @@ MonoBehaviour:
   smoothing: 1
   lifetime: 0
   referenceDirection: 1
-  minDistance: 0.5
+  minDistance: 1.5
   maxDistance: 2
   minViewDegrees: 0
   maxViewDegrees: 15
   aspectV: 1
   ignoreAngleClamp: 0
   ignoreDistanceClamp: 0
-  useFixedVerticalPosition: 1
+  useFixedVerticalPosition: 0
   fixedVerticalPosition: -0.1
   orientToReferenceDirection: 0
 --- !u!114 &677831152 stripped
@@ -1097,17 +1097,17 @@ PrefabInstance:
     - target: {fileID: 8806603437482837512, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: fixedVerticalPosition
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8806603437482837512, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: minDistance
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8806603437482837512, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: maxDistance
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8806603437482837512, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
@@ -1118,6 +1118,16 @@ PrefabInstance:
         type: 3}
       propertyPath: rotateLerpTime
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806603437482837512, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: maxViewDegrees
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806603437482837512, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: aspectV
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8969267816385042362, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
