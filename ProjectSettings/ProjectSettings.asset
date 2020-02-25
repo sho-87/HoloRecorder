@@ -550,14 +550,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template3D
+  metroPackageName: HoloRecorder
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: Simon Ho
   metroCertificateIssuer: Simon Ho
   metroCertificateNotAfter: 809f74924c09d701
-  metroApplicationDescription: Template_3D
+  metroApplicationDescription: HoloLens recorder
   wsaImages: {}
   metroTileShortName: HoloRecorder
   metroTileShowName: 0
@@ -589,7 +589,7 @@ PlayerSettings:
       InternetClientServer: False
       Location: False
       LowLevelDevices: False
-      Microphone: True
+      Microphone: False
       MusicLibrary: False
       Objects3D: False
       OfflineMapsManagement: False
