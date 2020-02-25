@@ -994,6 +994,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7758430213202285967, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_text
+      value: Click to enter ID...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758430213202285967, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758430213202285967, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758430213202285967, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7915729866667665463, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: m_textInfo.characterCount
