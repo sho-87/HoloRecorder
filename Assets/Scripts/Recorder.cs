@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 public class Recorder : MonoBehaviour
 {
-    private StateContainer stateContainer;
+    public GameObject stateContainer;
     private long NTPOffset;
     private List<string> dataList;
     public bool recording = false;
@@ -13,8 +14,7 @@ public class Recorder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stateContainer = GameObject.Find("StateContainer").GetComponent<StateContainer>();
-        NTPOffset = stateContainer.NTPOffset;
+        NTPOffset = stateContainer.GetComponent<StateContainer>().NTPOffset;
         dataList = new List<string>();
     }
 
@@ -26,7 +26,7 @@ public class Recorder : MonoBehaviour
             dataList.Add(GetTrueTime().ToString() + "," +
                 transform.position.x + "," +
                 transform.position.y + "," +
-                transform.position.z + "\r\n");
+                transform.position.z);
 
             //Debug.Log(GetTrueTime().ToString() + ": " + transform.position);
         }
@@ -47,18 +47,24 @@ public class Recorder : MonoBehaviour
     {
         recording = false;
         dataList = new List<string>();
-        stateContainer.ResetID();
+        stateContainer.GetComponent<StateContainer>().ResetID();
     }
 
     public void SaveDataFile()
     {
         Debug.Log("Data file saved to " + GetDataPath());
-        string dataText = "position,x,y,z" + "\r\n";
-        foreach (string data in dataList)
+
+        using (TextWriter tw = new StreamWriter(GetDataPath()))
         {
-            dataText += data;
+            string header = "position,x,y,z";
+            tw.WriteLine(header);
+
+            for (int i = 0; i < dataList.Count; i++)
+            {
+                tw.WriteLine(dataList[i]);
+            }
+                
         }
-        File.AppendAllText(GetDataPath(), dataText);
         ResetData();
     }
 }

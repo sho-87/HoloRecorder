@@ -1,13 +1,16 @@
 ﻿using System;
 using TMPro;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StateContainer : MonoBehaviour
 {
     public string id;
+    public GameObject idInput;
     public long NTPOffset = 0;
+    public GameObject startButton;
+    public GameObject stopButton;
+    public GameObject saveButton;
+    public GameObject resetButton;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,9 @@ public class StateContainer : MonoBehaviour
 
         NTPOffset = systemTime - ntpTime;
         Debug.Log("Time offset: " + NTPOffset);
+
+        // Disable buttons initially
+        SetButtonActive(false);
     }
 
     // Update is called once per frame
@@ -32,7 +38,16 @@ public class StateContainer : MonoBehaviour
 
     public void ResetID()
     {
-        GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>().text = "";
+        idInput.GetComponent<TMP_InputField>().text = "";
         id = "";
+        SetButtonActive(false);
+    }
+
+    public void SetButtonActive(bool state)
+    {
+        startButton.SetActive(state);
+        stopButton.SetActive(state);
+        saveButton.SetActive(state);
+        resetButton.SetActive(state);
     }
 }

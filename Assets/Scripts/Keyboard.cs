@@ -15,11 +15,11 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
         [Experimental]
         [SerializeField] private NonNativeKeyboard keyboard = null;
         public GameObject menu;
-        private GameObject stateContainer;
+        public GameObject stateContainer;
+        public GameObject startButton;
 
         void Start()
         {
-            stateContainer = GameObject.Find("StateContainer");
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -39,8 +39,9 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
 
         private void DisableKeyboard(object sender, EventArgs e)
         {
-            stateContainer.GetComponent<StateContainer>().id = GetComponent<TMP_InputField>().text;
             menu.SetActive(true);
+            startButton.SetActive(true);
+            stateContainer.GetComponent<StateContainer>().id = GetComponent<TMP_InputField>().text;
             keyboard.OnTextUpdated -= UpdateText;
             keyboard.OnClosed -= DisableKeyboard;
             keyboard.OnTextSubmitted -= DisableKeyboard;

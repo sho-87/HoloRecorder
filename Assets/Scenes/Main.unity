@@ -200,8 +200,8 @@ GameObject:
   - component: {fileID: 534669903}
   - component: {fileID: 534669908}
   - component: {fileID: 534669907}
-  - component: {fileID: 534669906}
   - component: {fileID: 534669909}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -342,6 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05a809d616dc5e48a2b2a58fd2d9108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateContainer: {fileID: 1693270001}
+  recording: 0
 --- !u!1 &554752971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5684875916272126430, guid: c519f8cb21eb11b44b2fda772b2132d6,
@@ -937,6 +939,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7301045313964007909, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7457904604369537415, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -967,10 +974,20 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7457904604990593131, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7457904604990593143, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
       propertyPath: m_Name
       value: StartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604990593143, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7758430213202285967, guid: c519f8cb21eb11b44b2fda772b2132d6,
         type: 3}
@@ -1107,6 +1124,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9094578450482127222, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094578450482127222, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094578450482127222, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094578450482127222, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094578450482127222, guid: c519f8cb21eb11b44b2fda772b2132d6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c519f8cb21eb11b44b2fda772b2132d6, type: 3}
 --- !u!1 &1115695492 stripped
@@ -1129,6 +1171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboard: {fileID: 677831152}
   menu: {fileID: 306233333}
+  stateContainer: {fileID: 1693270001}
+  startButton: {fileID: 2019635182}
 --- !u!1 &1132953390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7915729867288197575, guid: c519f8cb21eb11b44b2fda772b2132d6,
@@ -1208,8 +1252,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  recording: 0
+  idInput: {fileID: 1115695492}
   NTPOffset: 0
+  startButton: {fileID: 2019635182}
+  stopButton: {fileID: 1132953390}
+  saveButton: {fileID: 554752971}
+  resetButton: {fileID: 1941834375}
 --- !u!4 &1693270003
 Transform:
   m_ObjectHideFlags: 0

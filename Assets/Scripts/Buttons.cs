@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Buttons : MonoBehaviour
     {
         Debug.Log("Start recording...");
         recorder.recording = true;
+        GameObject.Find("StateContainer").GetComponent<StateContainer>().SetButtonActive(true);
     }
 
     public void StopRecord()
