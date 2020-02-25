@@ -37,6 +37,6 @@ public class Buttons : MonoBehaviour
     public void ResetData()
     {
         Debug.Log("Resetting...");
-        recorder.CreateTempFile();
+        recorder.ResetData();
     }
 }

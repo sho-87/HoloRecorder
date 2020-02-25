@@ -1,15 +1,13 @@
 ﻿using System;
-using System.IO;
-using System.Text;
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Recorder : MonoBehaviour
 {
     private StateContainer stateContainer;
     private long NTPOffset;
-    private Vector3 position;
+    private List<string> dataList;
     public bool recording = false;
 
     // Start is called before the first frame update
@@ -17,7 +15,7 @@ public class Recorder : MonoBehaviour
     {
         stateContainer = GameObject.Find("StateContainer").GetComponent<StateContainer>();
         NTPOffset = stateContainer.NTPOffset;
-        CreateTempFile();
+        dataList = new List<string>();
     }
 
     // Update is called once per frame
@@ -25,15 +23,13 @@ public class Recorder : MonoBehaviour
     {
         if (recording)
         {
-            position = transform.position;
+            dataList.Add(GetTrueTime().ToString() + "," +
+                transform.position.x + "," +
+                transform.position.y + "," +
+                transform.position.z + "\r\n");
 
-            Debug.Log(GetTrueTime().ToString() + ": " + position);
+            //Debug.Log(GetTrueTime().ToString() + ": " + transform.position);
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-        File.Delete(GetTempPath());
     }
 
     long GetTrueTime()
@@ -41,41 +37,28 @@ public class Recorder : MonoBehaviour
         return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() - NTPOffset;
     }
 
-    private string GetTempPath()
-    {
-        return Path.Combine(Application.persistentDataPath, "temp.csv");
-    }
-
     private string GetDataPath()
     {
         string id = stateContainer.GetComponent<StateContainer>().id;
-        return Path.Combine(Application.persistentDataPath, "data", id + "_" + System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm") + ".csv");
+        return Path.Combine(Application.persistentDataPath, id + "_" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm") + ".csv");
     }
 
-    public void CreateTempFile()
+    public void ResetData()
     {
+        recording = false;
+        dataList = new List<string>();
         stateContainer.ResetID();
-
-        try
-        {
-            Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "data"));
-
-            using (FileStream fs = File.Create(GetTempPath()))
-            {
-                byte[] header = new UTF8Encoding(true).GetBytes("time,position");
-                fs.Write(header, 0, header.Length);
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.ToString());
-        }
     }
 
     public void SaveDataFile()
     {
         Debug.Log("Data file saved to " + GetDataPath());
-        File.Copy(GetTempPath(), GetDataPath());
-        CreateTempFile();
+        string dataText = "position,x,y,z" + "\r\n";
+        foreach (string data in dataList)
+        {
+            dataText += data;
+        }
+        File.AppendAllText(GetDataPath(), dataText);
+        ResetData();
     }
 }
