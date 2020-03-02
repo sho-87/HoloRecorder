@@ -56,7 +56,7 @@ public class Recorder : MonoBehaviour
 
         using (TextWriter tw = new StreamWriter(GetDataPath()))
         {
-            string header = "position,x,y,z";
+            string header = "time,x,y,z";
             tw.WriteLine(header);
 
             for (int i = 0; i < dataList.Count; i++)
