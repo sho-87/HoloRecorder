@@ -61,3 +61,23 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+MSBuildForUnity.Common.props
+
+MSBuild/Projects/HoloRecorder.Dependencies.msb4u.g.props
+
+MSBuild/Output/obj/Dependencies/project.assets.json
+
+MSBuild/Output/obj/Dependencies/HoloRecorder.Dependencies.msb4u.csproj.nuget.dgspec.json
+
+Assets/Dependencies/netstandard2.0.meta
+
+MSBuild/Output/obj/Dependencies/HoloRecorder.Dependencies.msb4u.csproj.nuget.cache
+
+MSBuild/Output/obj/Dependencies/HoloRecorder.Dependencies.msb4u.csproj.nuget.g.targets
+
+MSBuild/Output/obj/Dependencies/Release/net46/HoloRecorder.Dependencies.msb4u.assets.cache
+
+Assets/MixedRealityToolkit.Providers/WindowsMixedReality/Shared/DotNetAdapter/DotNetAdapter.csproj.meta
+
+MSBuild/Output/obj/Dependencies/Release/net46/HoloRecorder.Dependencies.msb4u.csprojAssemblyReference.cache
